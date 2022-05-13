@@ -1,0 +1,27 @@
+<h1> Login </h1>
+<%- include ('./partials/messages') %>
+<%- include ('./partials/bootstrap') %>
+
+<!-- 
+<div class="collapse container" id="collapseExample">
+    <div class="card card-body col-4"> -->
+
+<div class="container">
+    <form action="/users/login" method="POST">
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Enter Email" required />
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter Password" required />
+
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+    </form>
+</div>
+
+
+
+   
