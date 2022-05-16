@@ -1,9 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Flights = require("../models/Flights");
+const Reservation = require("../models/Reservation")
+// const popupS = require('popups');
+const alert = require('alert')
 
 const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth");
+
+const isAvailable = "Your flight is available."
+const notAvailable = "We are sorry, but we cannot offer you flight in this time. Try again to find another one, please."
 
 
 
@@ -29,16 +35,15 @@ router.get('/form', (req,res) => {
   console.log(sDate, sDestination);
   Flights.find({date:`${sDate}`, destination:`${sDestination}`, emptySeats:{$gt: `${sPassengers}`}} ).exec((err, data) => {
     if (data == false) {
+      console.log('brak takiego lotu');          
      
-      
-     
+      alert(notAvailable)
+
      } else {
         console.log(data)
 
-      
-
-
-        res.render('checkflights', {title: "Your flight is available", data, }) ;   
+           
+        res.render('checkflights', {isAvailable, data, }) ;   
         
       }
         });  

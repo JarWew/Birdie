@@ -5,7 +5,7 @@ const fs = require('fs');
 const emailValidator= require('email-validator');
 
 const ReservationModel = require('../models/Reservation');
-const SeatsModel = require('../models/Seat');
+
 
 router.get("/",(req,res)=>{
     ReservationModel.getAllReservations(

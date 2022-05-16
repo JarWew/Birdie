@@ -34,21 +34,21 @@ app.use( "/assets", express.static(path.join(__dirname, "./../frontend/assets"))
 );
 
 
-// do reserwacji
-app.use((req,resp,next)=>{
-  resp.header("Access-Control-Allow-Origin","*");
-  resp.header("Access-Control-Allow-Headers","Content-Type,x-access-token");
-  resp.header("Access-Control-Allow-Methods","GET,POST");
-  next();
-});
+// // do reserwacji
+// app.use((req,resp,next)=>{
+//   resp.header("Access-Control-Allow-Origin","*");
+//   resp.header("Access-Control-Allow-Headers","Content-Type,x-access-token");
+//   resp.header("Access-Control-Allow-Methods","GET,POST");
+//   next();
+// });
 
 
-app.use((req,res,next)=>{
-res.header("Access-Control-Allow-Origin","*");
-res.header("Access-Control-Allow-Headers","Content-Type,x-access-token");
-res.header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE")
-next();
-});
+// app.use((req,res,next)=>{
+// res.header("Access-Control-Allow-Origin","*");
+// res.header("Access-Control-Allow-Headers","Content-Type,x-access-token");
+// res.header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE")
+// next();
+// });
 
 
 
@@ -75,7 +75,7 @@ app.use((req, res, next) => {
 app.use("/", require("./routes/routes"));
 app.use("/users", require("./routes/users"));
 app.use('/dashboards/reservation', require('./routes/reservation'));
-app.use('/dashboard/seat', require('./routes/seat'));
+
 
 
 app.listen(port, (err) => {

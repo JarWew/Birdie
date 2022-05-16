@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 // autoIncrement = require('mongoose-auto-increment');
 // autoIncrement.initialize(connection);
 const uniqueValidator = require('mongoose-unique-validator');
@@ -12,16 +13,13 @@ const reservations = new mongoose.Schema(
             type:String,
             required:true
           },
-          surname:{
-            type:String,
-            required:true
-          },
+         
           email:{
             type:String,
             required:true,
             unique:true
           },
-          telephone:{
+          phone:{
             type:Number,
             required:true,
             unique:true,
@@ -33,19 +31,17 @@ const reservations = new mongoose.Schema(
               ref:"seats",
               conditions: {} // Enables ref validation
           },
-          ticket_id:{
+         flight_id:{
             type:String,
             unique:true
           },
-          flight_id:{
-            type:String,
-            unique:true
-          },
-          created_at:{
-            type:String
-          }
-    }
+            }
 )
+
+
+//Model Register
+
+
 
 // //reservation plugins
 // reservations.plugin(autoIncrement.plugin, {
@@ -56,27 +52,26 @@ reservations.plugin(uniqueValidator);
 mongoose.plugin(require('mongoose-ref-validator'));
 
 
-//Model Register
-mongoose.model("reservations",reservations);
 
-var ReservationModel = {};
 
-ReservationModel.model = mongoose.model("reservations");
+// var ReservationModel = {};
 
-ReservationModel.add =  (reservation, callback)=> {
-    reservation.created_at = Date.now();
-    //
-    reservation.ticket_id = randomstring.generate(10);
-    reservationObj = new ReservationModel.model(reservation);
-    reservationObj.save((error, doc)=>{
-      callback(error, doc);
-    });
-};
+// ReservationModel.model = mongoose.model("reservations");
 
-ReservationModel.getAllReservations =  (callback)=> {
-  ReservationModel.model.find({},(error, doc)=>{
-      callback(error, doc)
-    });
-};
+// ReservationModel.add =  (reservation, callback)=> {
+//     reservation.created_at = Date.now();
+//     //
+//     reservation.ticket_id = randomstring.generate(10);
+//     reservationObj = new ReservationModel.model(reservation);
+//     reservationObj.save((error, doc)=>{
+//       callback(error, doc);
+//     });
+// };
 
-module.exports = ReservationModel;
+// ReservationModel.getAllReservations =  (callback)=> {
+//   ReservationModel.model.find({},(error, doc)=>{
+//       callback(error, doc)
+//     });
+// };
+
+module.exports = mongoose.model(`Reservations`,reservations);
