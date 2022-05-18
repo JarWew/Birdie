@@ -56,3 +56,12 @@ container.addEventListener('click', (e) => {
 }
 // intial count and total
 updateSelectedCount();
+
+
+
+const destination = localStorage.getItem("destination");
+const date = localStorage.getItem("date");
+
+document.getElementById('showDestination').textContent = (`${destination}`);
+document.getElementById('showDate').textContent = (`${date}`);
+
