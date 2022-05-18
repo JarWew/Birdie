@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Flights = require("../models/Flights");
 const Reservation = require("../models/Reservation")
-// const popupS = require('popups');
 const alert = require('alert')
 
 const router = express.Router();
@@ -29,29 +28,44 @@ router.get('/form', (req,res) => {
   const sDestination = req.query.destination;
   const sDate = req.query.date;
   const sPassengers = req.query.passengers;
+ 
+  req.session.destination = sDestination;
+  
+ 
+  // próbuję przeniesć dane do routsa usera
 
-  
-  
+    
   console.log(sDate, sDestination);
+
   Flights.find({date:`${sDate}`, destination:`${sDestination}`, emptySeats:{$gt: `${sPassengers}`}} ).exec((err, data) => {
     if (data == false) {
       console.log('brak takiego lotu');          
-     
       alert(notAvailable)
-
-     } else {
+    } else {
         console.log(data)
-
-           
-        res.render('checkflights', {isAvailable, data, }) ;   
+        res.render('checkflights', {isAvailable, data, }) ; 
+      
         
       }
         });  
       });    
     
+router.get("/rozbraer20", ensureAuthenticated, (req, res) => {
+    res.render("rozbraer20", { user: req.user});
+});
+
+router.get("/embraer170", ensureAuthenticated, (req, res) => {
+  res.render("embraer170", { user: req.user});
+});
+      
+router.get("/boeing737", ensureAuthenticated, (req, res) => {
+  res.render("boeing737", { user: req.user});
+});
 
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
     res.render("dashboard", { user: req.user});
 });
+
+
 
 module.exports = router;

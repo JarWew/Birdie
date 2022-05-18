@@ -12,6 +12,7 @@ const config = require('../config')
 const port = 8000;
 const bodyParser = require('body-parser')
 const fs = require("fs");
+const cookieParser = require('cookie-parser')
 
 
 mongoose.connect(config.db, {useNewUrlParser: true});
@@ -25,6 +26,7 @@ require("./config/passport")(passport);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger('dev'));
+app.use(cookieParser())
 app.use(bodyParser.json())
 app.set("views", path.join(__dirname, "./../frontend/views"));
 app.set("view engine", "ejs");
@@ -74,7 +76,8 @@ app.use((req, res, next) => {
 //Routes
 app.use("/", require("./routes/routes"));
 app.use("/users", require("./routes/users"));
-app.use('/dashboards/reservation', require('./routes/reservation'));
+app.use('/dashboard/reservation', require('./routes/reservation'));
+
 
 
 
