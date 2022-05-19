@@ -59,8 +59,9 @@ app.use( "/assets", express.static(path.join(__dirname, "./../frontend/assets"))
 app.use(
   session({
     secret: "secret",
-    resave: true,
+    resave: false,
     saveUninitialized: true,
+    // cookie: {maxAge: 180}
   })
 );
 app.use(passport.initialize());

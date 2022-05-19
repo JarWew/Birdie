@@ -2,11 +2,13 @@ const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.seat:not(.occupied');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
+const btnConfirm = document.getElementById('btnConfirm');
+
 
 populateUI();
 
 // dodać cenę biletu i nr lotu z bazy danych lub localstorage
-let ticketPrice = 20
+let ticketPrice = 100
 let selectedFlightIndex = "WAR200422"
 
 // Save selected flight index and price
@@ -35,7 +37,7 @@ function updateSelectedCount() {
 }
 
 // get data from localstorage and populate ui
-function populateUI() {
+function populateUI() { 
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat, index) => {
@@ -47,6 +49,7 @@ function populateUI() {
 
 // Seat click event
 container.addEventListener('click', (e) => {
+  
   if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
     e.target.classList.toggle('selected');
 
@@ -54,14 +57,26 @@ container.addEventListener('click', (e) => {
   }
 });
 }
+
+// btnConfirm.addEventListener('click', (e) => {
+//   const seatsSelected = document.querySelectorAll('selected')
+//   console.log('button działą');
+//   if(seatsSelected.classList.contains('selected')) {
+//       seatsSelected.classList.toggle('occupied');
+//   }
+// });
+
 // intial count and total
 updateSelectedCount();
+
+
 
 
 
 const destination = localStorage.getItem("destination");
 const date = localStorage.getItem("date");
 
-document.getElementById('showDestination').textContent = (`${destination}`);
-document.getElementById('showDate').textContent = (`${date}`);
+// document.getElementById('showDestination').textContent = (`${destination}`);
+// document.getElementById('showDate').textContent = (`${date}`);
+
 

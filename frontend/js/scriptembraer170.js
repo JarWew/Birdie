@@ -6,8 +6,8 @@ const total = document.getElementById('total');
 populateUI();
 
 // dodać cenę biletu i nr lotu z bazy danych lub localstorage
-let ticketPrice = 20
-let selectedFlightIndex = "WAR200422"
+let ticketPrice = 200
+let selectedFlightIndex = "737B0602"
 
 // Save selected flight index and price
 function setFlightData(flightIndex, flightPrice) {

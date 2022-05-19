@@ -20,11 +20,12 @@ router.get("/register", (req, res) => {
 router.post("/login", (req, res, next) => {
  
 const destination = req.session.destination 
+const date = req.session.date;
   
   // const destination = 'Bari' 
  
  
-  if( destination === 'Warszawa') {
+  if( destination === 'Warszawa' & date === '2022-05-16') {
       passport.authenticate("local", {
         successRedirect: "/rozbraer20",
         failureRedirect:"/",
@@ -115,6 +116,7 @@ router.post("/register", (req, res) => {
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "Now logged out");
+  
   res.redirect("/");
 });
 module.exports = router;

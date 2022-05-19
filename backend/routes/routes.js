@@ -10,8 +10,6 @@ const { ensureAuthenticated } = require("../config/auth");
 const isAvailable = "Your flight is available."
 const notAvailable = "We are sorry, but we cannot offer you flight in this time. Try again to find another one, please."
 
-
-
 //login and start page
 router.get("/", (req, res) =>{
  
@@ -30,7 +28,7 @@ router.get('/form', (req,res) => {
   const sPassengers = req.query.passengers;
  
   req.session.destination = sDestination;
-  
+  req.session.date = sDate;
  
   // próbuję przeniesć dane do routsa usera
 
@@ -51,27 +49,52 @@ router.get('/form', (req,res) => {
       });    
     
 router.get("/rozbraer20", ensureAuthenticated, (req, res) => {
+  const lDestination = req.session.destination 
+  const lDate = req.session.date;
+
+  Flights.find({date: `${lDate}`, destination: `${lDestination}`}).exec((err, dane) => {
+    if (dane ==false) {
+      console.log('upps. coś poszło nie tak');
+    } else {
+      console.log(dane);
+      res.render("rozbraer20", { user: req.user, dane});
+    }
+    })
+  });
 
 
-
-    res.render("rozbraer20", { user: req.user});
-});
 
 router.get("/embraer170", ensureAuthenticated, (req, res) => {
+  const lDestination = req.session.destination 
+  const lDate = req.session.date;
 
-
-
-  res.render("embraer170", { user: req.user});
+  Flights.find({date: `${lDate}`, destination: `${lDestination}`}).exec((err, dane) => {
+    if (dane ==false) {
+      console.log('upps. coś poszło nie tak');
+    } else {
+      console.log(dane);
+      res.render("embraer170", { user: req.user, dane});
+    }
+    }) 
 });
       
 router.get("/boeing737", ensureAuthenticated, (req, res) => {
+  const lDestination = req.session.destination 
+  const lDate = req.session.date;
 
+  Flights.find({date: `${lDate}`, destination: `${lDestination}`}).exec((err, dane) => {
+    if (dane ==false) {
+      console.log('upps. coś poszło nie tak');
+    } else {
+      console.log(dane);
+      res.render("boeing737", { user: req.user, dane});
+    }
+    })
 
-  
-  res.render("boeing737", { user: req.user});
 });
 
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
+  
     res.render("dashboard", { user: req.user});
 });
 
