@@ -1,27 +1,46 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-   
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rozbraer 20</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <link rel="stylesheet" href="../assets/css/stylerozbraer.css">
+   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
    <link rel="stylesheet" href="../assets/css/styleembraer170.css">
    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 </head>
 <body>
-   <ul class="showcase col-8">
-      <li>
-        <div class="seatsquare"></div>
-        <small>N/A</small>
-      </li>
+   <%- include ('./header.ejs') %>
 
-      <li>
-        <div class="seatselectedsquare"></div>
-        <small>Selected</small>
-      </li>
+   <div class="containter-fluid text-light p-1 col-12">
+       
+      <div class="row justify-content-around  me-5">
+          <h2 class="text-light col-6 col-md-9 col-sm-9 col-xs-6" >Welcome <%= user.name %> on board</h2> 
+          <a href="/users/logout" class=" btn btn-primary col-2 col-lg-1 m-3  col-1 mb-3  mb-sm-4 col-md-1 col-sm-2 col-xs-6" >Logout</a>
+         
+     </div>
+  </div>
 
-      <li>
-        <div class="seatoccupiedsquare"></div>
-        <small>Occupied</small>
-      </li>
-    </ul>
+  <ul class="showcase">
+   <li>
+     <div class="seatsquare"></div>
+     <small>N/A</small>
+   </li>
+
+   <li>
+     <div class="seatselectedsquare"></div>
+     <small>Selected</small>
+   </li>
+
+   <li>
+     <div class="seatoccupiedsquare"></div>
+     <small>Occupied</small>
+   </li>
+ </ul>
+
 
   
     
@@ -268,7 +287,7 @@
                inkscape:connector-curvature="0" />
           </g>
           <path
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="path5067"
              d="m 37.578469,42.350818 h -4.059051 v 1.351875 c 0,0 0.326024,1.408204 2.021374,1.408204 1.695346,0 2.021377,-1.422287 2.021377,-1.422287 z"
              style="fill:#d40055;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.23998187px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -296,7 +315,7 @@
              style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.35076368px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="path5889"
              d="m 23.698802,256.63393 v 6.36605 h 2.113688 c 0,0 2.201762,-0.51133 2.201762,-3.17025 0,-2.65892 -2.223779,-3.17024 -2.223779,-3.17024 z"
              style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.37579706px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -769,19 +788,19 @@
              id="rect6039"
              style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.23358725px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
           <path
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="path6041"
              d="m 39.953627,31.699002 h -4.10752 v 1.498329 c 0,0 0.329921,1.560765 2.045513,1.560765 1.715589,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill:#008000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="path6043"
              d="m 34.234477,31.702425 h -4.10752 v 1.498329 c 0,0 0.329922,1.560766 2.045514,1.560766 1.715589,0 2.04551,-1.576371 2.04551,-1.576371 z"
              style="fill:#00aa00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="path6047"
              d="m 37.795848,253.0866 h -4.059052 v 1.35187 c 0,0 0.326025,1.4082 2.021374,1.4082 1.695347,0 2.021378,-1.42228 2.021378,-1.42228 z"
              style="fill:#d40055;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.23998187px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -800,84 +819,84 @@
              inkscape:connector-curvature="0" />
           <path
              class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat1c"
              d="m 31.599137,74.115785 h -4.107513 v 1.498329 c 0,0 0.329894,1.560765 2.045514,1.560765 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat1a"
              d="m 26.165348,74.124487 h -4.107513 v 1.49833 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715585,0 2.045513,-1.576371 2.045513,-1.576371 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat2c"
              d="m 31.599137,83.949417 h -4.107513 v 1.498329 c 0,0 0.329894,1.560765 2.045514,1.560765 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat2a"
              d="m 26.165348,83.958119 h -4.107513 v 1.49833 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715585,0 2.045513,-1.576371 2.045513,-1.576371 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat3c"
              d="m 31.599137,93.7708 h -4.107513 v 1.49833 c 0,0 0.329894,1.560765 2.045514,1.560765 1.715582,0 2.04551,-1.576371 2.04551,-1.576371 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat3a"
              d="m 26.165348,93.779503 h -4.107513 v 1.498329 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat4c"
              d="m 31.599137,103.59218 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat4a"
              d="m 26.165348,103.60089 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat5d"
              d="m 31.599137,113.41357 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat5a"
              d="m 26.165348,113.42227 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat6c"
              d="m 31.636146,123.31408 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat6a"
              d="m 26.202357,123.32279 h -4.107513 v 1.49832 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -885,189 +904,189 @@
              inkscape:label="#seat6a" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat7c"
              d="m 31.636146,133.13547 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat7a"
              d="m 26.202357,133.14417 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat8c"
              d="m 31.636146,142.95685 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat8a"
              d="m 26.202357,142.96555 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat10c"
              d="m 31.636146,162.23254 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat10a"
              d="m 26.202357,162.24124 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat9c"
              d="m 31.636146,152.17198 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat9a"
              d="m 26.202357,152.18068 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat11c"
              d="m 31.636146,171.91002 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715582,0 2.04551,-1.57638 2.04551,-1.57638 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat11a"
              d="m 26.202357,171.91872 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat13c"
              d="m 31.636146,191.55279 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat13a"
              d="m 26.202357,191.56149 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat14c"
              d="m 31.61966,201.45384 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat14a"
              d="m 26.185871,201.46254 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat15c"
              d="m 31.61966,211.27522 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat15a"
              d="m 26.185871,211.28393 h -4.107513 v 1.49832 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat12c"
              d="m 31.636146,181.7314 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat12a"
              d="m 26.202357,181.74011 h -4.107513 v 1.49833 c 0,0 0.329894,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat14f"
              d="m 48.159747,201.42953 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045513,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat14d"
              d="m 42.725958,201.43823 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045513,1.56077 1.715586,0 2.045514,-1.57637 2.045514,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat16f"
              d="m 48.159747,220.46605 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045513,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat16d"
              d="m 42.725958,220.47475 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045513,1.56076 1.715586,0 2.045514,-1.57637 2.045514,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat15f"
              d="m 48.159747,211.25091 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045513,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat15d"
              d="m 42.725958,211.25962 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045513,1.56076 1.715586,0 2.045514,-1.57637 2.045514,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat17f"
              d="m 48.159747,230.3827 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045513,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat17d"
              d="m 42.725958,230.39141 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045513,1.56077 1.715586,0 2.045514,-1.57637 2.045514,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat17c"
              d="m 31.772267,230.3827 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1075,105 +1094,105 @@
              inkscape:label="seat17c" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat17a"
              d="m 26.338478,230.39141 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat16c"
              d="m 31.61966,220.49035 h -4.107513 v 1.49833 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715582,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat16a"
              d="m 26.185871,220.49906 h -4.107513 v 1.49832 c 0,0 0.329894,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat18c"
              d="m 31.772267,239.59783 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat18a"
              d="m 26.338478,239.60654 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat1f"
              d="m 48.227432,74.006185 h -4.107513 v 1.498329 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat1d"
              d="m 42.603842,73.981144 h -4.107513 v 1.49833 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715585,0 2.045513,-1.576371 2.045513,-1.576371 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat2f"
              d="m 48.136912,83.756427 h -4.107513 v 1.498329 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat2d"
              d="M 42.703123,83.865918 H 38.59561 v 1.498329 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715585,0 2.045513,-1.576371 2.045513,-1.576371 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat3f"
              d="m 48.136912,93.57781 h -4.107513 v 1.498329 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat3d"
              d="M 42.703123,93.586513 H 38.59561 v 1.498329 c 0,0 0.329893,1.560765 2.045514,1.560765 1.715585,0 2.045513,-1.576371 2.045513,-1.576371 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat4f"
              d="m 48.136912,103.39919 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat4d"
              d="M 42.703123,103.4079 H 38.59561 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat5f"
              d="m 48.136912,113.22058 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="path6067-81-4-6-0-9-1-0-22"
              d="M 42.703123,113.22928 H 38.59561 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1181,112 +1200,112 @@
              inkscape:label="#seat5d" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat6f"
              d="m 48.173921,123.12109 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat6d"
              d="m 42.740132,123.12979 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat7f"
              d="m 48.173921,132.94248 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat7d"
              d="m 42.740132,132.95118 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat8f"
              d="m 48.173921,142.76386 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat8d"
              d="m 42.740132,142.77257 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat10f"
              d="m 48.173921,162.03956 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat10d"
              d="m 42.740132,162.04826 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat9f"
              d="m 48.173921,151.97899 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat9d"
              d="m 42.740132,151.9877 h -4.107513 v 1.49832 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat11f"
              d="m 48.173921,171.71703 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat11d"
              d="m 42.740132,171.72574 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat13f"
              d="m 48.173921,191.3598 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat13d"
              d="m 42.740132,191.3685 h -4.107513 v 1.49833 c 0,0 0.329893,1.56077 2.045514,1.56077 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path 
           class="seat"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat12f"
              d="m 48.173921,181.53842 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715581,0 2.04551,-1.57637 2.04551,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              inkscape:connector-curvature="0" />
           <path
           class="seat occupied"
-             sodipodi:nodetypes="cccscc"
+             class="seat" sodipodi:nodetypes="cccscc"
              id="seat12d"
              d="m 42.740132,181.54712 h -4.107513 v 1.49833 c 0,0 0.329893,1.56076 2.045514,1.56076 1.715585,0 2.045513,-1.57637 2.045513,-1.57637 z"
              style="fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.25415078px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1304,5 +1323,8 @@
  <p id="showDate"></p>
 
 <script src="../js/scriptembraer170.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 </html>

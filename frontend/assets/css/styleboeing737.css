@@ -5,19 +5,22 @@
 }
 
 body {
-  background-color:rgb(189, 210, 218);
-  opacity: 1;
+  background-image: url("./airbackgroundsmall.jpg");
+  background-position: top center;
+  background-repeat:space;
+  background-color:#25497e;
+  opacity: 0.9;
   display: flex;
   flex-direction: column;
   color: white;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-family: 'Lato', 'sans-serif';
+  height: 100%;
+
 }
 
 .container {
-  perspective: 1000px;
+  perspective: 1500px;
   margin-bottom: 30px;
 
 }
@@ -39,7 +42,6 @@ fill: yellow;
  cursor:progress;
 }
 
-
 .seat:not(.occupied):hover {
   cursor: pointer;
   fill: #ad276a;
@@ -47,7 +49,6 @@ fill: yellow;
 
 .showcase .seat:not(.occupied):hover {
   cursor: default;
-  transform: scale(1);
   background-color:yellow;;
 }
 

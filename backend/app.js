@@ -36,7 +36,7 @@ app.use( "/assets", express.static(path.join(__dirname, "./../frontend/assets"))
 );
 
 
-// // do reserwacji
+// // do rezerwacji
 // app.use((req,resp,next)=>{
 //   resp.header("Access-Control-Allow-Origin","*");
 //   resp.header("Access-Control-Allow-Headers","Content-Type,x-access-token");
