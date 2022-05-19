@@ -51,14 +51,23 @@ router.get('/form', (req,res) => {
       });    
     
 router.get("/rozbraer20", ensureAuthenticated, (req, res) => {
+
+
+
     res.render("rozbraer20", { user: req.user});
 });
 
 router.get("/embraer170", ensureAuthenticated, (req, res) => {
+
+
+
   res.render("embraer170", { user: req.user});
 });
       
 router.get("/boeing737", ensureAuthenticated, (req, res) => {
+
+
+  
   res.render("boeing737", { user: req.user});
 });
 
