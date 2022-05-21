@@ -1,11 +1,21 @@
+const handy = document.getElementById('handyLuggage');
+const medium = document.getElementById('mediumLuggage');
+const large = document.getElementById('largeLuggage');
+
+
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.seat:not(.occupied');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
+
+// const btnLuggage = document.querySelector('.btnluggage')
+
 const btnConfirm = document.getElementById('btnConfirm');
 
 
+
 populateUI();
+
 
 // dodać cenę biletu i nr lotu z bazy danych lub localstorage
 let ticketPrice = 100
@@ -17,6 +27,8 @@ function setFlightData(flightIndex, flightPrice) {
   localStorage.setItem('selectedFlightIndex', flightIndex);
   localStorage.setItem('selectedFlightPrice', flightPrice);
 }
+
+
 
 // update total and count
 function updateSelectedCount() {
@@ -36,6 +48,8 @@ function updateSelectedCount() {
   total.innerText = selectedSeatsCount * ticketPrice;
 }
 
+
+
 // get data from localstorage and populate ui
 function populateUI() { 
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
@@ -47,36 +61,45 @@ function populateUI() {
     });
   }
 
+  
+  
+
 // Seat click event
 container.addEventListener('click', (e) => {
   
   if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
     e.target.classList.toggle('selected');
-
     updateSelectedCount();
+    
   }
 });
 }
-
-// btnConfirm.addEventListener('click', (e) => {
-//   const seatsSelected = document.querySelectorAll('selected')
-//   console.log('button działą');
-//   if(seatsSelected.classList.contains('selected')) {
-//       seatsSelected.classList.toggle('occupied');
-//   }
-// });
 
 // intial count and total
 updateSelectedCount();
 
 
+btnConfirm.addEventListener('click', () => {
+  console.log('button działą');
+ let onlySelectedSeats = document.querySelectorAll('.selected');
+  for (x of onlySelectedSeats)     
+    //  x.classList.remove('.selected');
+     x.classList.toggle('.occupied');
+});
 
 
+handy.addEventListener('click'), () => {
+  console.log('handy luggage');
+  }
+  
+ 
 
-const destination = localStorage.getItem("destination");
-const date = localStorage.getItem("date");
 
-// document.getElementById('showDestination').textContent = (`${destination}`);
+// const destination = localStorage.getItem("destination");
+// const date = localStorage.getItem("date");
+
+// // document.getElementById('showDestination').textContent = (`${destination}`);
 // document.getElementById('showDate').textContent = (`${date}`);
+
 
 
