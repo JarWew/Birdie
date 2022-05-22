@@ -1313,8 +1313,8 @@
         </g>
       </g>
     </svg>
-   
-    <p class="text-white display-6 display-md-6 display-sm-8 p-1">You have selected <span class="count">0</span> seats for a price of <span class="total">0</span> PLN </p> 
+  
+ <p class="text-white display-6 display-md-6 display-sm-8 p-1">You have selected <span class="count">0</span> seats for a price of <span class="total">0</span> PLN </p> 
  
  <p class=" text-white display-6 p-1 ">Choose a luggage, please.</p>
 
@@ -1326,21 +1326,21 @@
       <div class="d-flex row align-content-auto justify-content-around"> 
       
          <div class="form-check col-4 p-4">
-            <input class="form-check-input" type="radio" name="luggage" value="handy up to 8kg - for free" id="handy" >
+            <input class="form-check-input" type="radio" name="luggage" value="handy up to 8kg - for free" id="0" >
             <img id="handyLuggage" src="../assets/img/luggagehandy.svg"  alt="handy luggage" class="col-3 m-3">
             <label class="form-check-label" for="flexRadioDefault1">
                handy up to 8kg - for free
             </label>
          </div>
          <div class="form-check col-4 p-4">
-            <input class="form-check-input" type="radio" name="luggage" value="medium + handy up to 15kg - extra payment 100 PLN" id="medium">
+            <input class="form-check-input" type="radio" name="luggage" value="medium + handy up to 15kg - extra payment 100 PLN" id="100">
             <img src="../assets/img/luggagemedium.svg" alt="medium luggage"  class="col-3 m-3">
             <label class="form-check-label" for="flexRadioDefault1">
                medium + handy up to 15kg - extra payment 100 PLN
             </label>
          </div>
          <div class="form-check col-4 p-4">
-            <input class="form-check-input" type="radio" name="luggage" value="large + handy up to 25kg - extra payment - 200 PLN" id="large">
+            <input class="form-check-input" type="radio" name="luggage" value="large + handy up to 25kg - extra payment - 200 PLN" id="200">
             <img src="../assets/img/luggagelarge.svg" alt="large luggage" class="col-3 m-3">
             <label class="form-check-label" for="flexRadioDefault2">
                large + handy up to 25kg - extra payment - 200 PLN
@@ -1418,8 +1418,7 @@
         <thead>
          <tr>
          <th scope="col">Total payment: </th> 
-         <td>......... </td>
-       
+         <td id="totalPayment"> </td>
          </tr>
      </thead>
    
@@ -1431,6 +1430,8 @@
       </div>
     </div>
    
+
+ 
 
 
  <footer class="col-8"><%- include('footer'); -%></footer>

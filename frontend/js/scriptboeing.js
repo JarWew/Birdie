@@ -10,6 +10,7 @@ const totalL = document.querySelector('.total');
 const form = document.querySelector("#myForm");
 const radioGroup = form.querySelectorAll("input[name=luggage]");
 const resultElement = document.querySelector("#displayL");
+const displayTP = document.getElementById("totalPayment");
 
 
 populateUI();
@@ -71,12 +72,31 @@ function luggage() {
     radio.addEventListener("change", e => {
         for (const radio of radioGroup) {
             if (radio.checked) {
-                resultElement.textContent = radio.value; //pobieram tekst leżący obok radio
-                break;
-            }
-        }
+                resultElement.textContent = radio.value; 
+                let idLuggage = radio.id;
+                console.log(idLuggage);
+                const Sparsowana = parseInt(idLuggage,10)
+                // sparsowana to kwota za bagaż pojedynczy
+
+                       function showTP() {
+
+
+                            const Countery = parseInt(localStorage.getItem('selectedSeatsCount'))
+                            const TotalPayment = (1800 + Sparsowana) * Countery
+                              
+                            displayTP.innerText = TotalPayment;
+
+                        
+                          };
+                          
+                       showTP();
+
+              
+             } 
+            }   
     });
   }
+
   }
   
   luggage()

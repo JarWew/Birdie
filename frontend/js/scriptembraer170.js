@@ -5,11 +5,11 @@ const total = document.getElementById('total');
 const countL = document.querySelector('.count');
 const totalL = document.querySelector('.total');
 
-
-
 const form = document.querySelector("#myForm");
 const radioGroup = form.querySelectorAll("input[name=luggage]");
 const resultElement = document.querySelector("#displayL");
+const displayTP = document.getElementById("totalPayment");
+
 
 
 populateUI();
@@ -25,7 +25,7 @@ function setFlightData(flightIndex, flightPrice) {
   localStorage.setItem('selectedFlightPrice', flightPrice);
 }
 
-// update total and count
+// update total and count*count
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll('.seat.selected');
 
@@ -38,6 +38,7 @@ function updateSelectedCount() {
   //return new array of indexes
 
   const selectedSeatsCount = selectedSeats.length;
+  localStorage.setItem('selectedSeatsCount', selectedSeatsCount)
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
@@ -66,21 +67,43 @@ container.addEventListener('click', (e) => {
   }
 });
 
+
+
 function luggage() {
   
   for (const radio of radioGroup) {
     radio.addEventListener("change", e => {
         for (const radio of radioGroup) {
             if (radio.checked) {
-                resultElement.textContent = radio.value; //pobieram tekst leżący obok radio
-                break;
-            }
-        }
+                resultElement.textContent = radio.value; 
+                let idLuggage = radio.id;
+                console.log(idLuggage);
+                const Sparsowana = parseInt(idLuggage,10)
+                // sparsowana to kwota za bagaż pojedynczy
+
+                       function showTP() {
+
+
+                            const Countery = parseInt(localStorage.getItem('selectedSeatsCount'))
+                            const TotalPayment = (200 + Sparsowana) * Countery
+                              
+                            displayTP.innerText = TotalPayment;
+
+                        
+                          };
+                          
+                       showTP();
+
+              
+             } 
+            }   
     });
   }
+
   }
   
   luggage()
+
 
 }
 // intial count and total
@@ -92,4 +115,3 @@ updateSelectedCount();
 
 // document.getElementById('showDestination').textContent = (`${destination}`);
 // document.getElementById('showDate').textContent = (`${date}`);
-

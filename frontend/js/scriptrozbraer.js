@@ -5,11 +5,10 @@ const total = document.getElementById('total');
 const countL = document.querySelector('.count');
 const totalL = document.querySelector('.total');
 
-
-
 const form = document.querySelector("#myForm");
 const radioGroup = form.querySelectorAll("input[name=luggage]");
 const resultElement = document.querySelector("#displayL");
+const displayTP = document.getElementById("totalPayment");
 
 
 
@@ -17,7 +16,7 @@ populateUI();
 
 // dodać cenę biletu i nr lotu z bazy danych lub localstorage
 let ticketPrice = 100
-let selectedFlightIndex = "WAR200422"
+let selectedFlightIndex = "737B0602"
 
 // Save selected flight index and price
 function setFlightData(flightIndex, flightPrice) {
@@ -26,7 +25,7 @@ function setFlightData(flightIndex, flightPrice) {
   localStorage.setItem('selectedFlightPrice', flightPrice);
 }
 
-// update total and count
+// update total and count*count
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll('.seat.selected');
 
@@ -39,15 +38,13 @@ function updateSelectedCount() {
   //return new array of indexes
 
   const selectedSeatsCount = selectedSeats.length;
+  localStorage.setItem('selectedSeatsCount', selectedSeatsCount)
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
 
   countL.innerText = selectedSeatsCount;
   totalL.innerText = selectedSeatsCount * ticketPrice;
-
-
-
 }
 
 // get data from localstorage and populate ui
@@ -70,26 +67,51 @@ container.addEventListener('click', (e) => {
   }
 });
 
+
+
 function luggage() {
   
-for (const radio of radioGroup) {
-  radio.addEventListener("change", e => {
-      for (const radio of radioGroup) {
-          if (radio.checked) {
-              resultElement.textContent = radio.value; //pobieram tekst leżący obok radio
-              break;
-          }
-      }
-  });
+  for (const radio of radioGroup) {
+    radio.addEventListener("change", e => {
+        for (const radio of radioGroup) {
+            if (radio.checked) {
+                resultElement.textContent = radio.value; 
+                let idLuggage = radio.id;
+                console.log(idLuggage);
+                const Sparsowana = parseInt(idLuggage,10)
+                // sparsowana to kwota za bagaż pojedynczy
+
+                       function showTP() {
+
+
+                            const Countery = parseInt(localStorage.getItem('selectedSeatsCount'))
+                            const TotalPayment = (100 + Sparsowana) * Countery
+                              
+                            displayTP.innerText = TotalPayment;
+
+                        
+                          };
+                          
+                       showTP();
+
+              
+             } 
+            }   
+    });
+  }
+
+  }
+  
+  luggage()
+
+
 }
-}
-
-luggage()
-
-
-
-};
-
-
 // intial count and total
-updateSelectedCount()
+updateSelectedCount();
+
+
+// const destination = localStorage.getItem("destination");
+// const date = localStorage.getItem("date");
+
+// document.getElementById('showDestination').textContent = (`${destination}`);
+// document.getElementById('showDate').textContent = (`${date}`);
