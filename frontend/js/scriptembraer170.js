@@ -2,6 +2,15 @@ const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.seat:not(.occupied');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
+const countL = document.querySelector('.count');
+const totalL = document.querySelector('.total');
+
+
+
+const form = document.querySelector("#myForm");
+const radioGroup = form.querySelectorAll("input[name=luggage]");
+const resultElement = document.querySelector("#displayL");
+
 
 populateUI();
 
@@ -32,6 +41,9 @@ function updateSelectedCount() {
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
+
+  countL.innerText = selectedSeatsCount;
+  totalL.innerText = selectedSeatsCount * ticketPrice;
 }
 
 // get data from localstorage and populate ui
@@ -53,14 +65,31 @@ container.addEventListener('click', (e) => {
     updateSelectedCount();
   }
 });
+
+function luggage() {
+  
+  for (const radio of radioGroup) {
+    radio.addEventListener("change", e => {
+        for (const radio of radioGroup) {
+            if (radio.checked) {
+                resultElement.textContent = radio.value; //pobieram tekst leżący obok radio
+                break;
+            }
+        }
+    });
+  }
+  }
+  
+  luggage()
+
 }
 // intial count and total
 updateSelectedCount();
 
 
-const destination = localStorage.getItem("destination");
-const date = localStorage.getItem("date");
+// const destination = localStorage.getItem("destination");
+// const date = localStorage.getItem("date");
 
-document.getElementById('showDestination').textContent = (`${destination}`);
-document.getElementById('showDate').textContent = (`${date}`);
+// document.getElementById('showDestination').textContent = (`${destination}`);
+// document.getElementById('showDate').textContent = (`${date}`);
 

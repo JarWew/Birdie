@@ -1,21 +1,19 @@
-const handy = document.getElementById('handyLuggage');
-const medium = document.getElementById('mediumLuggage');
-const large = document.getElementById('largeLuggage');
-
-
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.seat:not(.occupied');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
+const countL = document.querySelector('.count');
+const totalL = document.querySelector('.total');
 
-// const btnLuggage = document.querySelector('.btnluggage')
 
-const btnConfirm = document.getElementById('btnConfirm');
+
+const form = document.querySelector("#myForm");
+const radioGroup = form.querySelectorAll("input[name=luggage]");
+const resultElement = document.querySelector("#displayL");
 
 
 
 populateUI();
-
 
 // dodać cenę biletu i nr lotu z bazy danych lub localstorage
 let ticketPrice = 100
@@ -27,8 +25,6 @@ function setFlightData(flightIndex, flightPrice) {
   localStorage.setItem('selectedFlightIndex', flightIndex);
   localStorage.setItem('selectedFlightPrice', flightPrice);
 }
-
-
 
 // update total and count
 function updateSelectedCount() {
@@ -46,12 +42,16 @@ function updateSelectedCount() {
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
+
+  countL.innerText = selectedSeatsCount;
+  totalL.innerText = selectedSeatsCount * ticketPrice;
+
+
+
 }
 
-
-
 // get data from localstorage and populate ui
-function populateUI() { 
+function populateUI() {
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat, index) => {
@@ -61,45 +61,35 @@ function populateUI() {
     });
   }
 
-  
-  
-
 // Seat click event
 container.addEventListener('click', (e) => {
-  
   if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
     e.target.classList.toggle('selected');
+
     updateSelectedCount();
-    
   }
 });
+
+function luggage() {
+  
+for (const radio of radioGroup) {
+  radio.addEventListener("change", e => {
+      for (const radio of radioGroup) {
+          if (radio.checked) {
+              resultElement.textContent = radio.value; //pobieram tekst leżący obok radio
+              break;
+          }
+      }
+  });
+}
 }
 
+luggage()
+
+
+
+};
+
+
 // intial count and total
-updateSelectedCount();
-
-
-btnConfirm.addEventListener('click', () => {
-  console.log('button działą');
- let onlySelectedSeats = document.querySelectorAll('.selected');
-  for (x of onlySelectedSeats)     
-    //  x.classList.remove('.selected');
-     x.classList.toggle('.occupied');
-});
-
-
-handy.addEventListener('click'), () => {
-  console.log('handy luggage');
-  }
-  
- 
-
-
-// const destination = localStorage.getItem("destination");
-// const date = localStorage.getItem("date");
-
-// // document.getElementById('showDestination').textContent = (`${destination}`);
-// document.getElementById('showDate').textContent = (`${date}`);
-
-
-
+updateSelectedCount()
