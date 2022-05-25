@@ -30,8 +30,7 @@ router.get('/form', (req,res) => {
   req.session.destination = sDestination;
   req.session.date = sDate;
  
-  // próbuję przeniesć dane do routsa user
- 
+
   console.log(sDate, sDestination);
 
     
@@ -75,18 +74,12 @@ router.get("/rozbraer20", ensureAuthenticated, (req, res) => {
 
   router.post("/rozbraer20", (req,res)=> {
 
-   
-    // const lPhone = req.query.phone;
     const lDestination = req.session.destination 
     const lDate = req.session.date;
-    const lbookingDate = req.query.bookingdata;
-    
-   
-    
-
+    const lbookingDate = new Date();
+          
     Reservation.insertMany({date:`${lDate}`, destination: `${lDestination}`, bookingDate: `${lbookingDate}`})
- 
- 
+  
     console.log('działa');
     res.render('payment', {user:req.user})
   })
@@ -112,7 +105,12 @@ router.get("/embraer170", ensureAuthenticated, (req, res) => {
 
 router.post("/embraer170", (req,res)=> {
 
-
+  const lDestination = req.session.destination 
+  const lDate = req.session.date;
+  const lbookingDate = new Date();
+          
+  Reservation.insertMany({date:`${lDate}`, destination: `${lDestination}`, bookingDate: `${lbookingDate}`})
+  
   console.log('działa');
   res.render('payment', {user:req.user})
 
@@ -137,6 +135,12 @@ router.get("/boeing737", ensureAuthenticated, (req, res) => {
 
 
 router.post("/boeing737", (req, res) => {
+
+  const lDestination = req.session.destination 
+  const lDate = req.session.date;
+  const lbookingDate = new Date();
+        
+  Reservation.insertMany({date:`${lDate}`, destination: `${lDestination}`, bookingDate: `${lbookingDate}`})
 
   console.log('działa');
   res.render('payment', {user:req.user})

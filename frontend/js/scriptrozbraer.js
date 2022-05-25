@@ -9,7 +9,6 @@ const form = document.querySelector("#myForm");
 const radioGroup = form.querySelectorAll("input[name=luggage]");
 const resultElement = document.querySelector("#displayL");
 const displayTP = document.getElementById("totalPayment");
-
 const btnConfirm = document.getElementById('btnConfirm')
 
 
@@ -19,14 +18,14 @@ populateUI();
 let ticketPrice = 100
 let selectedFlightIndex = "737B0602"
 
-// Save selected flight index and price
+
 function setFlightData(flightIndex, flightPrice) {
 
   localStorage.setItem('selectedFlightIndex', flightIndex);
   localStorage.setItem('selectedFlightPrice', flightPrice);
 }
 
-// update total and count*count
+
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll('.seat.selected');
 
@@ -34,10 +33,7 @@ function updateSelectedCount() {
 
   localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
 
-  //copy selected seats into arr
-  // map through array
-  //return new array of indexes
-
+ 
   const selectedSeatsCount = selectedSeats.length;
   localStorage.setItem('selectedSeatsCount', selectedSeatsCount)
 
@@ -48,7 +44,7 @@ function updateSelectedCount() {
   totalL.innerText = selectedSeatsCount * ticketPrice;
 }
 
-// get data from localstorage and populate ui
+
 function populateUI() {
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
   if (selectedSeats !== null && selectedSeats.length > 0) {
@@ -59,7 +55,7 @@ function populateUI() {
     });
   }
 
-// Seat click event
+
 container.addEventListener('click', (e) => {
   if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
     e.target.classList.toggle('selected');
@@ -102,31 +98,8 @@ function luggage() {
   
   luggage()
 
-
-  
-
-// btnConfirm.addEventListener("click", () => {
-//   async {const LbookingDate = new Date();
-
-//   document.getElementById('bookingDate').value = `${LbookingDate}`;
-// console.log('funkcja daty działa');
-
-// })
-
-
-  
-
-
-
-
-
 }
 // intial count and total
 updateSelectedCount();
 
 
-// const destination = localStorage.getItem("destination");
-// const date = localStorage.getItem("date");
-
-// document.getElementById('showDestination').textContent = (`${destination}`);
-// document.getElementById('showDate').textContent = (`${date}`);

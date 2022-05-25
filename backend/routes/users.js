@@ -40,7 +40,7 @@ const date = req.session.date;
         failureFlash: true,
       })(req, res, next);
 
-    } else if (destination === 'Nowy York') {
+    } else if (destination === 'New York') {
 
       passport.authenticate("local", {
         successRedirect: "/boeing737",

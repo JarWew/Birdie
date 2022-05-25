@@ -36,25 +36,6 @@ app.use( "/assets", express.static(path.join(__dirname, "./../frontend/assets"))
 );
 
 
-// // do rezerwacji
-// app.use((req,resp,next)=>{
-//   resp.header("Access-Control-Allow-Origin","*");
-//   resp.header("Access-Control-Allow-Headers","Content-Type,x-access-token");
-//   resp.header("Access-Control-Allow-Methods","GET,POST");
-//   next();
-// });
-
-
-// app.use((req,res,next)=>{
-// res.header("Access-Control-Allow-Origin","*");
-// res.header("Access-Control-Allow-Headers","Content-Type,x-access-token");
-// res.header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE")
-// next();
-// });
-
-
-
-
 //express session
 app.use(
   session({

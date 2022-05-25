@@ -5,13 +5,11 @@ const total = document.getElementById('total');
 const countL = document.querySelector('.count');
 const totalL = document.querySelector('.total');
 
-
-
 const form = document.querySelector("#myForm");
 const radioGroup = form.querySelectorAll("input[name=luggage]");
 const resultElement = document.querySelector("#displayL");
 const displayTP = document.getElementById("totalPayment");
-
+const btnConfirm = document.getElementById('btnConfirm')
 
 populateUI();
 
@@ -19,14 +17,14 @@ populateUI();
 let ticketPrice = 1800
 let selectedFlightIndex = "WAR200422"
 
-// Save selected flight index and price
+e
 function setFlightData(flightIndex, flightPrice) {
 
   localStorage.setItem('selectedFlightIndex', flightIndex);
   localStorage.setItem('selectedFlightPrice', flightPrice);
 }
 
-// update total and count
+
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll('.seat.selected');
 
@@ -34,9 +32,7 @@ function updateSelectedCount() {
 
   localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
 
-  //copy selected seats into arr
-  // map through array
-  //return new array of indexes
+  
 
   const selectedSeatsCount = selectedSeats.length;
 
@@ -46,7 +42,6 @@ function updateSelectedCount() {
   totalL.innerText = selectedSeatsCount * ticketPrice;
 }
 
-// get data from localstorage and populate ui
 function populateUI() {
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
   if (selectedSeats !== null && selectedSeats.length > 0) {
@@ -57,7 +52,7 @@ function populateUI() {
     });
   }
 
-// Seat click event
+
 container.addEventListener('click', (e) => {
   if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
     e.target.classList.toggle('selected');
@@ -85,13 +80,10 @@ function luggage() {
                             const TotalPayment = (1800 + Sparsowana) * Countery
                               
                             displayTP.innerText = TotalPayment;
-
-                        
+                       
                           };
                           
-                       showTP();
-
-              
+                         showTP();
              } 
             }   
     });
@@ -101,5 +93,5 @@ function luggage() {
   
   luggage()
 }
-// intial count and total
+
 updateSelectedCount();

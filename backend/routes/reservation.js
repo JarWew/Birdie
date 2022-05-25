@@ -19,18 +19,18 @@ router.get("/",(req,res)=>{
     )
 });
 router.post("/dashboard",(req,res)=>{
-    //=================================add required validations======================
+    
     reservation = req.body;
 
-     //email validation
+     
     if(!emailValidator.validate(reservation.email)){ 
-        //return unvalid mail
+     
         res.json({message:"unvalid email"});
     
-    }//telephone validation
+    }
     else if (! /^\d{11}$/.test(reservation.telephone)) {
-        //return unvalid number
-        res.json({message:"unvalid telephone number - should be 11 numbers"});
+    
+        res.json({message:"unvalid phone number - should be 11 numbers"});
     }
     else{
         ReservationModel.add(reservation,(err,doc)=>{
