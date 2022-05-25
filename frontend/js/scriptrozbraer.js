@@ -10,6 +10,7 @@ const radioGroup = form.querySelectorAll("input[name=luggage]");
 const resultElement = document.querySelector("#displayL");
 const displayTP = document.getElementById("totalPayment");
 
+const btnConfirm = document.getElementById('btnConfirm')
 
 
 populateUI();
@@ -88,13 +89,10 @@ function luggage() {
                             const TotalPayment = (100 + Sparsowana) * Countery
                               
                             displayTP.innerText = TotalPayment;
-
-                        
+                       
                           };
                           
-                       showTP();
-
-              
+                         showTP();
              } 
             }   
     });
@@ -103,6 +101,23 @@ function luggage() {
   }
   
   luggage()
+
+
+  
+
+// btnConfirm.addEventListener("click", () => {
+//   async {const LbookingDate = new Date();
+
+//   document.getElementById('bookingDate').value = `${LbookingDate}`;
+// console.log('funkcja daty działa');
+
+// })
+
+
+  
+
+
+
 
 
 }

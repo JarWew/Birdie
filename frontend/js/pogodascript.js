@@ -10,7 +10,12 @@ const API_LINK = "https://api.openweathermap.org/data/2.5/weather?q=";
 const API_KEY = "&appid=d3450adcb3a9754a836a92b0dcd77c1c";
 const API_UNITS = "&units=metric";
 
+// const miasto = localStorage.getItem('miasto');
+
+
 const getWeather = () => {
+
+
   const city = "Pyrzowice";
   const URL = API_LINK + city + API_KEY + API_UNITS;
 

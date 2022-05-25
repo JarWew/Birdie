@@ -2,39 +2,62 @@ const mongoose = require('mongoose');
 
 // autoIncrement = require('mongoose-auto-increment');
 // autoIncrement.initialize(connection);
-const uniqueValidator = require('mongoose-unique-validator');
-const refValidator = require('mongoose-ref-validator');
-const randomstring = require("randomstring");
+// const uniqueValidator = require('mongoose-unique-validator');
+// const refValidator = require('mongoose-ref-validator');
+// const randomstring = require("randomstring");
 
 
 const reservations = new mongoose.Schema(
     {    
-        name:{
-            type:String,
-            required:true
-          },
+      date: {
+            type: String,
+            required: true},  
+
+      destination: {
+              type: String,
+              required: true}, 
+
+      bookingdate: {
+              type: String,
+              
+              
+      },
+
+      // luggage:{
+      //       type: String,
+      //       // required:true,
+      // },
+
+      // name:{
+      //       type:String,
+      //       // required:true
+      //     },
          
-          email:{
-            type:String,
-            required:true,
-            unique:true
-          },
-          phone:{
-            type:Number,
-            required:true,
-            unique:true,
-          },
-          seat_number:{
-              type:String,
-              required:true,
-              unique:true,
-              ref:"seats",
-              conditions: {} // Enables ref validation
-          },
-         flight_id:{
-            type:String,
-            unique:true
-          },
+      // email:{
+      //       type:String,
+      //       // required:true,
+      //       unique:true
+      //     },
+   
+      // seat_number:{
+      //         type:String,
+      //         // required:true,
+      //         unique:true,
+      //         ref:"seats",
+      //         conditions: {} // Enables ref validation
+          
+          // seat_quantity: {
+          //   type: Number,
+          //   // required:true,
+
+          // },
+
+          // totalPayment: {
+          //   type: Number,
+          //   // required:true,
+
+          // },
+      
             }
 )
 
@@ -48,8 +71,8 @@ const reservations = new mongoose.Schema(
 //     model: 'reservations',
 //     startAt: 1001,
 // });
-reservations.plugin(uniqueValidator);
-mongoose.plugin(require('mongoose-ref-validator'));
+// reservations.plugin(uniqueValidator);
+// mongoose.plugin(require('mongoose-ref-validator'));
 
 
 

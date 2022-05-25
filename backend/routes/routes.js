@@ -30,12 +30,18 @@ router.get('/form', (req,res) => {
   req.session.destination = sDestination;
   req.session.date = sDate;
  
-  // próbuję przeniesć dane do routsa usera
-
-    
+  // próbuję przeniesć dane do routsa user
+ 
   console.log(sDate, sDestination);
 
-  Flights.find({date:`${sDate}`, destination:`${sDestination}`, emptySeats:{$gt: `${sPassengers}`}} ).exec((err, data) => {
+    
+  Flights.find({date:`${sDate}`, destination:`${sDestination}`, emptySeats:{$gt: `${sPassengers}`}} )
+  
+  
+  
+  
+  
+  .exec((err, data) => {
     if (data == false) {
       console.log('brak takiego lotu');          
       alert(notAvailable)
@@ -52,6 +58,8 @@ router.get("/rozbraer20", ensureAuthenticated, (req, res) => {
   const lDestination = req.session.destination 
   const lDate = req.session.date;
 
+
+   
   Flights.find({date: `${lDate}`, destination: `${lDestination}`}).exec((err, dane) => {
     if (dane ==false) {
       console.log('upps. coś poszło nie tak');
@@ -59,14 +67,37 @@ router.get("/rozbraer20", ensureAuthenticated, (req, res) => {
       console.log(dane);
       res.render("rozbraer20", { user: req.user, dane});
     }
+    
+
     })
   });
+
+
+  router.post("/rozbraer20", (req,res)=> {
+
+   
+    // const lPhone = req.query.phone;
+    const lDestination = req.session.destination 
+    const lDate = req.session.date;
+    const lbookingDate = req.query.bookingdata;
+    
+   
+    
+
+    Reservation.insertMany({date:`${lDate}`, destination: `${lDestination}`, bookingDate: `${lbookingDate}`})
+ 
+ 
+    console.log('działa');
+    res.render('payment', {user:req.user})
+  })
 
 
 
 router.get("/embraer170", ensureAuthenticated, (req, res) => {
   const lDestination = req.session.destination 
   const lDate = req.session.date;
+
+  
 
   Flights.find({date: `${lDate}`, destination: `${lDestination}`}).exec((err, dane) => {
     if (dane ==false) {
@@ -77,6 +108,16 @@ router.get("/embraer170", ensureAuthenticated, (req, res) => {
     }
     }) 
 });
+
+
+router.post("/embraer170", (req,res)=> {
+
+
+  console.log('działa');
+  res.render('payment', {user:req.user})
+
+})
+
       
 router.get("/boeing737", ensureAuthenticated, (req, res) => {
   const lDestination = req.session.destination 
@@ -87,22 +128,32 @@ router.get("/boeing737", ensureAuthenticated, (req, res) => {
       console.log('upps. coś poszło nie tak');
     } else {
       console.log(dane);
+
       res.render("boeing737", { user: req.user, dane});
     }
     })
 
 });
 
+
+router.post("/boeing737", (req, res) => {
+
+  console.log('działa');
+  res.render('payment', {user:req.user})
+
+})
+
+
+router.get("/payment", (req,res) => {
+  console.log("wylogowalem");
+  res.render("/")
+})
+
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
   
     res.render("dashboard", { user: req.user});
 });
 
-router.get("/rozbraer20", ensureAuthenticated, (req,res) => {
-
-  
-  res.render("payment", {user: req.user, dane})
-})
 
 
 module.exports = router;

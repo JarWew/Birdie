@@ -25,7 +25,7 @@ const date = req.session.date;
   // const destination = 'Bari' 
  
  
-  if( destination === 'Warszawa' & date === '2022-05-16') {
+  if( destination === 'Warszawa') {
       passport.authenticate("local", {
         successRedirect: "/rozbraer20",
         failureRedirect:"/",
